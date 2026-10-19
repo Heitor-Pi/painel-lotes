@@ -1,0 +1,278 @@
+
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #172033;
+  background: #f1f5f9;
+  font-synthesis: none;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.pagina {
+  width: min(100% - 32px, 680px);
+  margin: 0 auto;
+  padding: 40px 0 24px;
+}
+
+.cabecalho {
+  text-align: center;
+  margin-bottom: 28px;
+}npm run build
+
+.subtitulo {
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+h1 {
+  font-size: clamp(26px, 5vw, 36px);
+  margin: 12px 0;
+}
+
+.descricao {
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.painel {
+  padding: 28px;
+  border: 1px solid #dbe3ee;
+  border-radius: 20px;
+  background: white;
+  box-shadow: 0 12px 35px rgb(15 23 42 / 7%);
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.status-normal {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.status-alerta {
+  background: #fff7ed;
+  border-color: #fdba74;
+}
+
+.status-completo {
+  background: #fef2f2;
+  border-color: #fca5a5;
+}
+
+.linha-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.rotulo {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #475569;
+}
+
+.status-badge {
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.status-alerta .status-badge {
+  background: #fed7aa;
+  color: #9a3412;
+}
+
+.status-completo .status-badge {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.contador {
+  text-align: center;
+  font-size: clamp(76px, 15vw, 110px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-top: 24px;
+  color: #1d4ed8;
+}
+
+.status-alerta .contador {
+  color: #c2410c;
+}
+
+.status-completo .contador {
+  color: #b91c1c;
+}
+
+.capacidade,
+.porcentagem {
+  text-align: center;
+  color: #64748b;
+}
+
+.capacidade {
+  margin-top: 0;
+}
+
+.barra-fundo {
+  height: 12px;
+  margin-top: 28px;
+  border-radius: 20px;
+  background: #dbe3ee;
+  overflow: hidden;
+}
+
+.barra-preenchimento {
+  height: 100%;
+  border-radius: 20px;
+  background: #2563eb;
+  transition: width 0.25s ease;
+}
+
+.status-alerta .barra-preenchimento {
+  background: #f97316;
+}
+
+.status-completo .barra-preenchimento {
+  background: #dc2626;
+}
+
+.porcentagem {
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.controles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.botao {
+  border: 0;
+  border-radius: 10px;
+  padding: 14px 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.botao:not(:disabled):hover {
+  transform: translateY(-1px);
+}
+
+.botao:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.botao-principal {
+  color: white;
+  background: #2563eb;
+}
+
+.botao-secundario {
+  color: #1e293b;
+  background: #e2e8f0;
+}
+
+.campo-passo {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  margin-top: 26px;
+}
+
+.campo-passo label {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.campo-passo input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: white;
+}
+
+.campo-passo small {
+  color: #64748b;
+  line-height: 1.5;
+}
+
+.botao-finalizar {
+  width: 100%;
+  margin-top: 22px;
+  color: #b91c1c;
+  background: #fee2e2;
+}
+
+.historico {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 22px;
+  margin-top: 20px;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  background: white;
+}
+
+.historico h2 {
+  font-size: 17px;
+  margin: 2px 0 8px;
+}
+
+.historico p {
+  margin: 0;
+  color: #64748b;
+  line-height: 1.5;
+}
+
+footer {
+  text-align: center;
+  margin-top: 28px;
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+button:focus-visible,
+input:focus-visible {
+  outline: 3px solid #93c5fd;
+  outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+  .pagina {
+    padding-top: 24px;
+  }
+
+  .painel {
+    padding: 20px;
+  }
+
+  .controles {
+    grid-template-columns: 1fr;
+  }
+}
